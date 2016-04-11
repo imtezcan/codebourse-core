@@ -13,7 +13,7 @@ public class ScoresController {
     private DataProvider dataProvider;
 
     @RequestMapping(method = RequestMethod.GET, path = "/scores")
-    public final String getScores() {
+    public String getScores() {
         final Gson gson = new Gson();
         return gson.toJson(dataProvider.getScoresMap());
     }

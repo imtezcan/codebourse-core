@@ -19,10 +19,9 @@ public class GithubClientProvider {
     private RepositoryService repositoryService;
 
     public GithubClientProvider() {
-        final GitHubClient gitHubClient = new GitHubClient();
-        gitHubClient.setOAuth2Token(oauthToken);
-        eventService = new EventService(gitHubClient);
+        final GitHubClient gitHubClient = new GitHubClient().setOAuth2Token(oauthToken);
         repositoryService = new RepositoryService(gitHubClient);
+        eventService = new EventService(gitHubClient);
     }
 
     public EventService getEventService() {
